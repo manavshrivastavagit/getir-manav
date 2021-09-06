@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  
+  prod:
+    build:
+      context: ./
+      target: prod
+    ports:
+      - ${PORT}:4000
+    volumes:
+      - .:/usr/src/code
+      - /usr/src/code/node_modules/
+    environment:
+      - PORT=${PORT}
+      - MONGODB_CONNECTION=${MONGODB_CONNECTION}
+
+  test:
+    build:
+      context: ./
+      target: test
+    ports:
+      - ${PORT}:4000
+    volumes:
+      - .:/usr/src/code
+      - /usr/src/code/node_modules/
+    environment:
+      - PORT=${PORT}
+      - MONGODB_CONNECTION=${MONGODB_CONNECTION}
