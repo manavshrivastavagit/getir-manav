@@ -10,8 +10,8 @@ afterAll(async () => {
   await MongooseService.disconnectDB();
 });
 
-describe('Data - Records Test', () => {
-  it('should return empty response from mongo', async () => {
+describe('Records Test', () => {
+  it('should return empty response from mongodb', async () => {
     const res = await RecordRepository.findRecords({
       startDate: new Date('1991-01-01'),
       endDate: new Date('1992-01-01'),
@@ -22,7 +22,7 @@ describe('Data - Records Test', () => {
     expect(res).toEqual([]);
   });
 
-  it('should return existing records from mongo', async () => {
+  it('should return existing records from mongodb', async () => {
     const res = await RecordRepository.findRecords({
       startDate: new Date('2016-01-01'),
       endDate: new Date('2017-01-01'),

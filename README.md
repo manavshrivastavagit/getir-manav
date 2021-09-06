@@ -1,7 +1,9 @@
 # Getir NodeJS Assignment
 
-Deployed on Heroku : [https://getir-manav.herokuapp.com](https://getir-manav.herokuapp.com)
+Deployed on Heroku :
+[https://getir-manav.herokuapp.com](https://getir-manav.herokuapp.com)
 
+### Swagger :
 [Swagger Doc available at /api/docs](https://getir-manav.herokuapp.com/api/docs)
 
 ## Install dependencies

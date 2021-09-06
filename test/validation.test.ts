@@ -1,15 +1,9 @@
 import app from '../app';
 import supertest from 'supertest';
 
-describe('Validation Tests', () => {
+describe('Validation Test cases', () => {
   afterAll(() => {
     app.close();
-  });
-
-  it('should not allowed to get / route', async () => {
-    const res = await supertest(app.getApp()).get('/');
-
-    expect(res.status).toBe(404);
   });
 
   it('should receive 400 error if request is empty', (done) => {
@@ -27,6 +21,11 @@ describe('Validation Tests', () => {
         );
         done();
       });
+  });
+
+  it('should not allowed to get / route', async () => {
+    const res = await supertest(app.getApp()).get('/');
+    expect(res.status).toBe(404);
   });
 
   it('should receive 400 error if request invalid', (done) => {
