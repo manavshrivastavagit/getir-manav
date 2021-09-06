@@ -4,7 +4,7 @@ Deployed on Heroku : [https://getir-manav.herokuapp.com](https://getir-manav.her
 
 [Swagger Doc available at /api/docs](https://getir-manav.herokuapp.com/api/docs)
 
-## Install dependencies 
+## Install dependencies
 ```
 npm install
 ```
@@ -62,8 +62,7 @@ Response:
             "key": "sOmEKey",
             "createdAt": "2021-08-26T01:02:03.685Z",
             "totalCount": 1234
-        },
-        ...
+        }
     ]
 }
 ```
@@ -73,24 +72,25 @@ Response:
 {
     "code": 500,
     "msg": "Unable to connect to server!",
-    "error": "Operation `records.aggregate()` buffering timed out after 10000ms"
+    "error": "failed to connect to server on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]"
 }
 ```
+
 ```json
 {
     "code": 400,
     "msg": "Bad Request",
     "error": [
         {
-            "value": 6000,
-            "msg": "minCount must be lower than maxCount",
-            "param": "minCount",
+            "value": "2021-08-07",
+            "msg": "endDate must be greater than startDate",
+            "param": "endDate",
             "location": "body"
         },
         {
-            "value": 6000,
-            "msg": "maxCount must be greater than minCount",
-            "param": "maxCount",
+            "value": "2021-08-08",
+            "msg": "startDate must be lower than endDate",
+            "param": "startDate",
             "location": "body"
         }
     ]
@@ -102,15 +102,15 @@ Response:
     "msg": "Bad Request",
     "error": [
         {
-            "value": "2015-01-23",
-            "msg": "endDate must be greater than startDate",
-            "param": "endDate",
+            "value": 456,
+            "msg": "minCount must be lower than maxCount",
+            "param": "minCount",
             "location": "body"
         },
         {
-            "value": "2015-01-25",
-            "msg": "startDate must be lower than endDate",
-            "param": "startDate",
+            "value": 123,
+            "msg": "maxCount must be greater than minCount",
+            "param": "maxCount",
             "location": "body"
         }
     ]
