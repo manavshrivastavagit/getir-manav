@@ -5,7 +5,7 @@ const log: debug.IDebugger = debug('config:environment');
 
 const load = () => {
   if (dotenv.config().error) {
-    const dotenvResult = dotenv.config({ path: '../../../../.env' });
+    const dotenvResult = dotenv.config({ path: '.env.copy' });
     if (dotenvResult.error) {
       log('Error', 'Environment variables are not loaded !');
       throw dotenvResult.error;
